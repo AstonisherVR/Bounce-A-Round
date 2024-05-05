@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq83tyx3fi3gd"]
+
+[ext_resource type="Script" path="res://Players/player_1.gd" id="1_uqun6"]
+[ext_resource type="Texture2D" uid="uid://cwwouooshgk2m" path="res://Sprites/Human Player.png" id="2_hyfgt"]
+[ext_resource type="AudioStream" uid="uid://c8ephqthyh65e" path="res://SFX/Footstepwav.wav" id="3_y0ypa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tst5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hyfgt")
+}],
+"loop": true,
+"name": &"Player 1 Idle",
+"speed": 1.0
+}]
+
+[sub_resource type="Animation" id="Animation_6a012"]
+resource_name = "Footsteps"
+length = 1.18
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("3_y0ypa"), ExtResource("3_y0ypa"), ExtResource("3_y0ypa"), ExtResource("3_y0ypa"), ExtResource("3_y0ypa"), ExtResource("3_y0ypa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_fr6ro"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_p4qc5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("3_y0ypa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lpvs2"]
+_data = {
+"Footsteps": SubResource("Animation_6a012"),
+"Idle": SubResource("Animation_fr6ro"),
+"RESET": SubResource("Animation_p4qc5")
+}
+
+[node name="Player 1" type="CharacterBody2D" node_paths=PackedStringArray("animations", "knock_back_timer", "footsteps_sfx", "footsteps_animation_player")]
+collision_layer = 7
+collision_mask = 7
+floor_snap_length = 0.0
+safe_margin = 0.1
+script = ExtResource("1_uqun6")
+animations = NodePath("AnimatedSprite2D")
+knock_back_timer = NodePath("Knock Back Timer")
+footsteps_sfx = NodePath("AudioStreamPlayer2D")
+footsteps_animation_player = NodePath("AnimationPlayer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_tst5q")
+animation = &"Player 1 Idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(37.0002, -68.9999, 50.0002, -58.9999, 57.0001, -52.9999, 64.0001, -44.9998, 67.0001, -39.9998, 71.0001, -31.9998, 74.0001, -23.9998, 76, -16.9998, 78, -8.9998, 79, 0.000200279, 78, 8.0002, 74.9999, 20.0002, 72.9999, 26.0002, 68.9999, 36.0002, 64.9999, 43.0002, 59.9999, 49.0002, 54.9999, 54.0001, 46.9998, 61.0001, 37, 69)
+
+[node name="Knock Back Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_y0ypa")
+volume_db = -2.0
+pitch_scale = 1.31
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lpvs2")
+}
+
+[connection signal="timeout" from="Knock Back Timer" to="." method="_on_knock_back_timer_timeout"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=3 uid="uid://de472yy3674o7"]
+
+[ext_resource type="Texture2D" uid="uid://2h18haoq8f6s" path="res://Sprites/Line Particle.png" id="1_whrlb"]
+[ext_resource type="Texture2D" uid="uid://duypn7db61v6v" path="res://Sprites/Ball.png" id="2_hf8vg"]
+[ext_resource type="Script" path="res://Ball/bounce_particles_ball.gd" id="2_p1a3k"]
+
+[sub_resource type="Curve" id="Curve_cfswt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.165644, 1), 0.0, 0.0, 0, 0, Vector2(0.343374, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_gwl2k"]
+curve = SubResource("Curve_cfswt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7vtm"]
+lifetime_randomness = 0.22
+particle_flag_align_y = true
+particle_flag_disable_z = true
+initial_velocity_min = 368.42
+initial_velocity_max = 484.21
+gravity = Vector3(0, 0, 0)
+damping_min = 94.74
+damping_max = 94.74
+scale_min = 0.2
+scale_curve = SubResource("CurveTexture_gwl2k")
+
+[sub_resource type="Gradient" id="Gradient_d7rn0"]
+offsets = PackedFloat32Array(0.4, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_76s86"]
+gradient = SubResource("Gradient_d7rn0")
+
+[sub_resource type="Curve" id="Curve_nuldq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0828221, 1), 0.0, 0.0, 0, 0, Vector2(0.343374, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_uyunt"]
+curve = SubResource("Curve_nuldq")
+
+[sub_resource type="Curve" id="Curve_xr6mm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_viwh7"]
+curve = SubResource("Curve_xr6mm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_abyuf"]
+lifetime_randomness = 0.22
+particle_flag_align_y = true
+particle_flag_disable_z = true
+initial_velocity_min = 88.42
+initial_velocity_max = 175.64
+gravity = Vector3(0, 0, 0)
+damping_min = 94.74
+damping_max = 94.74
+damping_curve = SubResource("CurveTexture_uyunt")
+scale_min = 0.04
+scale_max = 0.08
+scale_curve = SubResource("CurveTexture_viwh7")
+color = Color(0.65098, 0.65098, 0.65098, 0.803922)
+color_ramp = SubResource("GradientTexture1D_76s86")
+
+[node name="Bounce Particles Ball" type="GPUParticles2D"]
+texture_filter = 1
+emitting = false
+amount = 11
+process_material = SubResource("ParticleProcessMaterial_p7vtm")
+texture = ExtResource("1_whrlb")
+lifetime = 0.55
+one_shot = true
+explosiveness = 0.74
+script = ExtResource("2_p1a3k")
+
+[node name="Bounce Particles Follow Up" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 13
+process_material = SubResource("ParticleProcessMaterial_abyuf")
+texture = ExtResource("2_hf8vg")
+lifetime = 1.45
+one_shot = true
+explosiveness = 0.97

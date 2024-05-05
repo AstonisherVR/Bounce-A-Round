@@ -1,0 +1,169 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds3g65fim75uk"]
+
+[ext_resource type="Script" path="res://UI/Menus/settings_menu.gd" id="1_pkcrv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ute6"]
+bg_color = Color(0, 0, 0, 0.396078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1pkg"]
+bg_color = Color(0.309804, 0.309804, 0.309804, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_s418x"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_avdw3"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6vm6"]
+font_size = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nyix4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("music_check_box", "sfx_check_box", "player_1_colors_option_button", "player_2_colors_option_button")]
+process_mode = 2
+script = ExtResource("1_pkcrv")
+music_check_box = NodePath("Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/Music CheckBox")
+sfx_check_box = NodePath("Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/SFX CheckBox")
+player_1_colors_option_button = NodePath("Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/Player1 Colors OptionButton")
+player_2_colors_option_button = NodePath("Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer/Player2 Colors OptionButton")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ute6")
+
+[node name="BackgroundPanel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -341.0
+offset_right = 640.0
+offset_bottom = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1pkg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/BackgroundPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Music Label" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_s418x")
+
+[node name="Music CheckBox" type="CheckBox" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="SFX Label" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_avdw3")
+
+[node name="SFX CheckBox" type="CheckBox" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Player1 Colors Label" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Player 1 Color Options
+"
+label_settings = SubResource("LabelSettings_u6vm6")
+
+[node name="Player1 Colors OptionButton" type="OptionButton" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Player2 Colors Label" type="Label" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Player 2 Color Options
+"
+label_settings = SubResource("LabelSettings_u6vm6")
+
+[node name="Player2 Colors OptionButton" type="OptionButton" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nyix4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 60
+text = "Close"
+
+[node name="QuitButton" type="Button" parent="Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+
+[connection signal="pressed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://lifj1p1t035t"]
+
+[ext_resource type="Script" path="res://countdown_timer.gd" id="1_7nopu"]
+
+[node name="Countdown Timer" type="Control" node_paths=PackedStringArray("game_timer", "flash_text_timer", "countdown_timer_text")]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_7nopu")
+game_timer = NodePath("Game Timer")
+flash_text_timer = NodePath("Flash Text Timer")
+countdown_timer_text = NodePath("Label")
+
+[node name="Game Timer" type="Timer" parent="."]
+process_callback = 0
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 146.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+
+[node name="Flash Text Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.6
+
+[connection signal="timeout" from="Game Timer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="Flash Text Timer" to="." method="_on_flash_text_timer_timeout"]

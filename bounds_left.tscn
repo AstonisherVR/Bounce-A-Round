@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq5lgx3emoax0"]
+
+[ext_resource type="Script" path="res://bounds_left.gd" id="1_3xx64"]
+[ext_resource type="PackedScene" uid="uid://brb0gacnyvbfa" path="res://glowing_void.tscn" id="2_dl50c"]
+[ext_resource type="AudioStream" uid="uid://vtd1mpoceklc" path="res://SFX/Score.wav" id="3_ee65f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbivd"]
+size = Vector2(15, 1094)
+
+[node name="Bounds Left" type="Area2D" node_paths=PackedStringArray("glowing_void_left", "score_sfx")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_3xx64")
+glowing_void_left = NodePath("Glowing Void Left/AnimationPlayer")
+score_sfx = NodePath("Score SFX")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kbivd")
+
+[node name="Glowing Void Left" parent="." instance=ExtResource("2_dl50c")]
+position = Vector2(77, 0)
+
+[node name="Score SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ee65f")
+volume_db = -12.0
+pitch_scale = 0.7
+attenuation = 0.757858
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Glowing Void Left"]

@@ -1,0 +1,15 @@
+SettingsMenu
+CheckBox
+Area2D
+CollisionShape2D
+AnimationPlayer
+Sprite2D
+AnimatedSprite2D
+OptionButton
+VisibleOnScreenNotifier2D
+CanvasLayer
+ColorRect
+Line2D
+MultiMeshInstance2D
+Control
+CharacterBody2D

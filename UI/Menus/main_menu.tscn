@@ -1,0 +1,190 @@
+[gd_scene load_steps=9 format=3 uid="uid://dw6y2u4cbpt42"]
+
+[ext_resource type="Script" path="res://UI/Menus/main_menu.gd" id="1_b0004"]
+[ext_resource type="Shader" path="res://game_color_rect.gdshader" id="2_tlm5h"]
+[ext_resource type="PackedScene" uid="uid://ds3g65fim75uk" path="res://UI/Menus/settings_menu.tscn" id="3_wgyqb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wnxf0"]
+font_size = 246
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlxkp"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 16
+shadow_color = Color(0, 0, 0, 0.360784)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kppm"]
+bg_color = Color(1, 1, 1, 0.184314)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.788235)
+corner_detail = 16
+shadow_color = Color(0, 0, 0, 0.360784)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g2n8b"]
+font_size = 40
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5l074"]
+shader = ExtResource("2_tlm5h")
+shader_parameter/fisheye_strength = 1.0
+
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("start_button", "setting_button", "version_num_label", "settings_menu")]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b0004")
+start_button = NodePath("Main Menu Options/GridContainer/Start Button")
+setting_button = NodePath("Main Menu Options/GridContainer/Settings Button")
+version_num_label = NodePath("MarginContainer/VersionNum")
+settings_menu = NodePath("SettingsMenu")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1935.0
+offset_bottom = 1092.0
+color = Color(0.054902, 0.00392157, 0.0823529, 1)
+
+[node name="Main Menu Options" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Game Title" type="Label" parent="Main Menu Options"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Ballers"
+label_settings = SubResource("LabelSettings_wnxf0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Main Menu Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Empty Space 1" type="Control" parent="Main Menu Options/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Start Button" type="Button" parent="Main Menu Options/GridContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 140
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlxkp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kppm")
+text = "Start"
+icon_alignment = 1
+
+[node name="Empty Space 2" type="Control" parent="Main Menu Options/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty Space 3" type="Control" parent="Main Menu Options/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Settings Button" type="Button" parent="Main Menu Options/GridContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 140
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlxkp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kppm")
+text = "Settings"
+icon_alignment = 1
+
+[node name="Empty Space 4" type="Control" parent="Main Menu Options/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty Space 5" type="Control" parent="Main Menu Options/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Quit Button" type="Button" parent="Main Menu Options/GridContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 140
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlxkp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kppm")
+text = "Quit"
+icon_alignment = 1
+
+[node name="Empty Space 6" type="Control" parent="Main Menu Options/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = 49.0
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="VersionNum" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "version"
+label_settings = SubResource("LabelSettings_g2n8b")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("3_wgyqb")]
+
+[node name="CRT Fish Eye Lens" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5l074")
+layout_mode = 2
+offset_left = -18.0
+offset_top = -15.0
+offset_right = 1955.0
+offset_bottom = 1088.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="pressed" from="Main Menu Options/GridContainer/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Main Menu Options/GridContainer/Settings Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Main Menu Options/GridContainer/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="closed_settings" from="SettingsMenu" to="." method="_on_settings_menu_closed_settings"]
