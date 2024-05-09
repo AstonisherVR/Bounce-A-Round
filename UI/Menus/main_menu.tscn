@@ -175,10 +175,10 @@ label_settings = SubResource("LabelSettings_g2n8b")
 [node name="CRT Fish Eye Lens" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_5l074")
 layout_mode = 2
-offset_left = -18.0
+offset_left = -3.0
 offset_top = -15.0
 offset_right = 1955.0
-offset_bottom = 1088.0
+offset_bottom = 1085.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

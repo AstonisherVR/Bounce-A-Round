@@ -183,6 +183,7 @@ libraries = {
 [node name="SettingsMenu" parent="." instance=ExtResource("3_h3yf2")]
 visible = false
 
+[connection signal="game_has_resumed" from="." to="." method="_on_game_has_resumed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Resume Button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Restart Button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Settings Button" to="." method="_on_settings_button_pressed"]

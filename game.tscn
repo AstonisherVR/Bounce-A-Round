@@ -164,7 +164,6 @@ shader = ExtResource("4_sowci")
 shader_parameter/fisheye_strength = 1.0
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("player_1", "player_2", "ball", "pause_menu", "countdown_timer_label", "game_camera", "animated_game_background", "random_specials_timer", "ball_spawner_timer")]
-modulate = Color(1, 0.533612, 0.468613, 1)
 texture_filter = 1
 script = ExtResource("1_hadr0")
 player_1 = NodePath("Player 1")

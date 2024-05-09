@@ -1,5 +1,5 @@
 extends Control
-
+signal game_has_resumed
 @export var background_animation_player: AnimationPlayer
 @export var is_playing_animation: bool
 @export var settings_menu: CanvasLayer
@@ -31,10 +31,16 @@ func _on_main_menu_button_pressed():
 
 func resume():
 	settings_menu.hide()
-	background_animation_player.play_backwards("Blur")
-	if is_playing_animation == false:
-		hide()
-		get_tree().paused = false
+	hide()
+	get_tree().paused = false
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Esc") and get_tree().paused == true:
+		print("unpause esc")
+		resume()
+	elif Input.is_action_just_pressed("Esc") and get_tree().paused == false:
+		print("pause esc")
+		pause()
 
 func pause():
 	get_tree().paused = true

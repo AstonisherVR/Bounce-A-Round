@@ -24,7 +24,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	game_time_over()
-	pause_escape()
 	if aplly_gravity_to_ball_state == true:
 		aplly_gravity_to_ball(delta)
 		#TODO show Popup
@@ -36,15 +35,6 @@ func game_time_over():
 		ball.game_over = true
 		random_specials_timer.stop()
 		print_rich("[color=red][b]Game Over![/b][/color]")
-
-func pause_escape():
-	if Input.is_action_just_pressed("Esc") and get_tree().paused == false:
-		print("pause esc")
-		pause_menu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-		pause_menu.pause()
-	elif Input.is_action_just_pressed("Esc") and get_tree().paused == true:
-		print("unpause esc")
-		pause_menu.resume()
 
 #TODO Random events. They will be the fun in the game:
 func _on_random_specials_timer_timeout():
@@ -67,6 +57,7 @@ func _on_random_specials_timer_timeout():
 	random_specials_timer.wait_time = randi_range(3, 5)
 	random_specials_timer.start()
 	#print("Timer rng Stopped and num is ", random_number_for_ball_specials)
+
 #This one adds gravity to the ball
 func aplly_gravity_to_ball(delta):
 	if not ball.is_on_floor():
