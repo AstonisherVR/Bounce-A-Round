@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://4ydhoklxd6l8"]
 
-[ext_resource type="Script" path="res://portal_2.gd" id="1_h4fm3"]
-[ext_resource type="PackedScene" uid="uid://b2pnxwpxs63y7" path="res://portal_base.tscn" id="1_kt6f2"]
+[ext_resource type="Script" path="res://Portals/portal_2.gd" id="1_h4fm3"]
+[ext_resource type="PackedScene" uid="uid://b2pnxwpxs63y7" path="res://Portals/portal_base.tscn" id="1_kt6f2"]
 
 [node name="Portal 2" instance=ExtResource("1_kt6f2")]
 script = ExtResource("1_h4fm3")

@@ -1,8 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dua4icc2b3ldh"]
+[gd_scene load_steps=8 format=3 uid="uid://dua4icc2b3ldh"]
 
-[ext_resource type="Script" path="res://UI/Menus/pause_menu.gd" id="1_5nofd"]
 [ext_resource type="Shader" path="res://UI/Menus/pause_menu.gdshader" id="2_gwssu"]
-[ext_resource type="PackedScene" uid="uid://ds3g65fim75uk" path="res://UI/Menus/settings_menu.tscn" id="3_h3yf2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cyin1"]
 shader = ExtResource("2_gwssu")
@@ -102,8 +100,7 @@ _data = {
 "RESET": SubResource("Animation_1x5vv")
 }
 
-[node name="Pause Menu" type="Control" node_paths=PackedStringArray("background_animation_player", "settings_menu")]
-process_mode = 2
+[node name="Pause Menu" type="Control"]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -111,9 +108,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5nofd")
-background_animation_player = NodePath("BackgroundAnimationPlayer")
-settings_menu = NodePath("SettingsMenu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_cyin1")
@@ -179,13 +173,3 @@ text = "Main Menu
 libraries = {
 "": SubResource("AnimationLibrary_p0eww")
 }
-
-[node name="SettingsMenu" parent="." instance=ExtResource("3_h3yf2")]
-visible = false
-
-[connection signal="game_has_resumed" from="." to="." method="_on_game_has_resumed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Resume Button" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Restart Button" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Settings Button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Main Menu Button" to="." method="_on_main_menu_button_pressed"]
-[connection signal="closed_settings" from="SettingsMenu" to="." method="_on_settings_menu_closed_settings"]

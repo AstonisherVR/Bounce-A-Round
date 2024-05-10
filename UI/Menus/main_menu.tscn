@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dw6y2u4cbpt42"]
 
 [ext_resource type="Script" path="res://UI/Menus/main_menu.gd" id="1_b0004"]
-[ext_resource type="Shader" path="res://game_color_rect.gdshader" id="2_tlm5h"]
+[ext_resource type="Shader" path="res://Main Game/game_color_rect.gdshader" id="2_tlm5h"]
 [ext_resource type="PackedScene" uid="uid://ds3g65fim75uk" path="res://UI/Menus/settings_menu.tscn" id="3_wgyqb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wnxf0"]
@@ -187,4 +187,3 @@ color = Color(1, 1, 1, 0)
 [connection signal="pressed" from="Main Menu Options/GridContainer/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Main Menu Options/GridContainer/Settings Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Main Menu Options/GridContainer/Quit Button" to="." method="_on_quit_button_pressed"]
-[connection signal="closed_settings" from="SettingsMenu" to="." method="_on_settings_menu_closed_settings"]

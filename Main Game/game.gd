@@ -3,7 +3,6 @@ extends Node2D
 @export var player_1: CharacterBody2D
 @export var player_2: CharacterBody2D
 @export var ball: CharacterBody2D
-@export var pause_menu: Control
 @export var countdown_timer_label: Label
 @export var game_camera: Camera2D
 @export var animated_game_background: AnimatedSprite2D
@@ -19,8 +18,7 @@ func _ready():
 	random_specials_timer.start()
 	animated_game_background.play("Default Background")
 	Global.camera = game_camera
-	#pause_menu.hide()
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	game_time_over()

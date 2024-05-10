@@ -1,9 +1,5 @@
 class_name SettingsMenu extends CanvasLayer
 
-signal closed_settings
-# opening this menu pauses the game, so you don't have to worry about blocking input
-# from anything underneath it
-
 @export var music_check_box: CheckBox
 @export var sfx_check_box: CheckBox
 @export var player_1_colors_option_button: OptionButton
@@ -26,17 +22,9 @@ func _process(_delta):
 
 func _on_close_button_pressed():
 	hide()
-	closed_settings.emit()
 
 func _on_quit_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Menus/main_menu.tscn")
-
-func _notification(what):
-	match what:
-		NOTIFICATION_ENTER_TREE:
-			get_tree().paused = true
-		NOTIFICATION_EXIT_TREE:
-			get_tree().paused = false
 
 func check_settings():
 	if music_check_box.button_pressed == true:

@@ -1,5 +1,7 @@
 extends Node
 
+signal toggle_game_paused(is_paused: bool)
+
 const PLAYERS_DEFAULT_MAX_SPEED: float = 500.0
 const PLAYERS_DEFAULT_SPEED: float = 360
 const PLAYERS_DEFAULT_ROTATION_SPEED: float = 0.05
@@ -19,7 +21,10 @@ var ball_idle_animations: Array = ["Idle", "Glowing Idle"]
 var ball_bounce_animations: Array = ["Bounce", "Glowing Bounce"]
 var music_audio_active: bool = true
 var sfx_audio_active: bool = true
+var paused: bool = false
 var camera: Camera2D
+var pause_menu: Control
+var settings_menu: CanvasLayer
 
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
@@ -27,11 +32,26 @@ var camera: Camera2D
 func _ready():
 	pass
 
-enum GLOBAL_STATE {
-	MAIN_MENU,
-	GAMEPLAY,
-	CONVERSATION,
-	PAUSED
-}
+func pause_play():
+	paused = !paused
+	pause_menu.visible = paused
+
+func resume():
+	get_tree().paused = false
+	pause_play()
+
+func restart():
+	get_tree().paused = false
+	pause_play()
+	get_tree().reload_current_scene()
+
+func load_settings():
+	settings_menu.show()
+	pause_menu.hide()
+
+func back_to_main_menu():
+	get_tree().paused = false
+	pause_play()
+	get_tree().change_scene_to_file("res://UI/Menus/main_menu.tscn")
 
 # temp - maybe the settings menu doesn't need to live in a global spot? (will decide in future version)

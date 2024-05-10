@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhugjco6h2lvi"]
 
 [ext_resource type="Script" path="res://UI/Menus/game_options_screen.gd" id="1_60ytf"]
-[ext_resource type="Shader" path="res://game_color_rect.gdshader" id="2_x8hlv"]
+[ext_resource type="Shader" path="res://Main Game/game_color_rect.gdshader" id="2_x8hlv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cab3e"]
 shader = ExtResource("2_x8hlv")
