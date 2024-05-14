@@ -1,4 +1,4 @@
-class_name SettingsMenu extends CanvasLayer
+extends CanvasLayer
 
 @export var music_check_box: CheckBox
 @export var sfx_check_box: CheckBox
@@ -9,22 +9,22 @@ class_name SettingsMenu extends CanvasLayer
 @onready var quit_button:Button = %QuitButton as Button
 
 func _ready():
-	# load (or create) file with these saved preferences
 	music_check_box.button_pressed = true
 	sfx_check_box.button_pressed = true
 	quit_button.visible = false
-	# set saved values (will be default values if first load)
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		hide()
 	check_settings()
 
 func _on_close_button_pressed():
-	hide()
+	Global.hide_settings()
 
 func _on_quit_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Menus/main_menu.tscn")
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Esc"):
+		Global.hide_settings()
 
 func check_settings():
 	if music_check_box.button_pressed == true:

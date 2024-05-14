@@ -45,9 +45,13 @@ func restart():
 	pause_play()
 	get_tree().reload_current_scene()
 
-func load_settings():
+func show_settings():
 	settings_menu.show()
 	pause_menu.hide()
+
+func hide_settings():
+	settings_menu.hide()
+	pause_menu.show()
 
 func back_to_main_menu():
 	get_tree().paused = false
