@@ -1,7 +1,7 @@
 extends Control
 
-@export var player_1_options_dropdown_button: OptionButton
-@export var player_2_options_dropdown_button: OptionButton
+@export var player_1_colors_option_dropdown_button: OptionButton
+@export var player_2_colors_option_dropdown_button: OptionButton
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	color_options() # Replace with function body.
@@ -12,6 +12,6 @@ func _process(delta):
 
 #TODO Make the color options
 func color_options():
-	if player_1_options_dropdown_button.item_selected:
+	if player_1_colors_option_dropdown_button.item_selected:
 		modulate = Color(1, 1, 5, 1)
 

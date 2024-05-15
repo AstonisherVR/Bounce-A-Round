@@ -213,7 +213,6 @@ settings_menu = NodePath("SettingsMenu")
 process_mode = 2
 
 [node name="SettingsMenu" parent="UI Manager" instance=ExtResource("16_2oj3s")]
-visible = false
 
 [connection signal="body_entered" from="Bounds Left" to="." method="_on_bounds_left_body_entered"]
 [connection signal="body_entered" from="Bounds Right" to="." method="_on_bounds_right_body_entered"]
@@ -223,6 +222,7 @@ visible = false
 [connection signal="pressed" from="UI Manager/Pause Menu/PanelContainer/CenterContainer/VBoxContainer/Restart Button" to="UI Manager" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="UI Manager/Pause Menu/PanelContainer/CenterContainer/VBoxContainer/Settings Button" to="UI Manager" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="UI Manager/Pause Menu/PanelContainer/CenterContainer/VBoxContainer/Main Menu Button" to="UI Manager" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="UI Manager/SettingsMenu/Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="UI Manager" method="_on_close_button_pressed"]
 
 [editable path="Player 1"]
 [editable path="Player 2"]

@@ -1,10 +1,10 @@
-res://Main Game/game.tscn
+res://UI/Menus/game_options_screen.tscn
 res://Ball/ball.gd
 res://Main Game/game_color_rect.gdshader
 res://UI/Menus/pause_menu.gdshader
-res://UI/Menus/game_options_screen.tscn
-res://UI/Menus/pause_menu.tscn
 res://UI/Menus/main_menu.tscn
+res://Main Game/game.tscn
+res://UI/Menus/pause_menu.tscn
 res://UI/Menus/settings_menu.tscn
 res://glowing_void.tscn
 res://Ball/new_ball.tscn
@@ -15,4 +15,6 @@ res://UI/countdown_timer.tscn
 res://UI/score.tscn
 res://UI/UI Manager.gd
 res://UI/Menus/settings_menu.gd
+res://UI/Menus/game_options_screen.gd
+res://UI/Menus/main_menu.gd
 res://Autoloads/Global.gd

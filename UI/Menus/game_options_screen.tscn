@@ -1,13 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhugjco6h2lvi"]
+[gd_scene load_steps=7 format=3 uid="uid://dhugjco6h2lvi"]
 
 [ext_resource type="Script" path="res://UI/Menus/game_options_screen.gd" id="1_60ytf"]
 [ext_resource type="Shader" path="res://Main Game/game_color_rect.gdshader" id="2_x8hlv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bxw4m"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0ag6"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_pb1dw"]
+font_size = 80
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cab3e"]
 shader = ExtResource("2_x8hlv")
 shader_parameter/fisheye_strength = 1.0
 
-[node name="Game Options Screen" type="Control" node_paths=PackedStringArray("player_1_options_dropdown_button", "player_2_options_dropdown_button")]
+[node name="Game Options Screen" type="Control" node_paths=PackedStringArray("player_1_colors_option_dropdown_button", "player_2_colors_option_dropdown_button")]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,52 +27,170 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_60ytf")
-player_1_options_dropdown_button = NodePath("GridContainer/Player 1 Colors Option Button")
-player_2_options_dropdown_button = NodePath("GridContainer/Player 2 Colors Option Button")
+player_1_colors_option_dropdown_button = NodePath("VBoxContainer/GridContainer/Player 1 Colors Option Button")
+player_2_colors_option_dropdown_button = NodePath("VBoxContainer/GridContainer/Player 2 Colors Option Button")
 metadata/_edit_lock_ = true
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 4
+alignment = 1
 
-[node name="Title Label" type="Label" parent="GridContainer"]
+[node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
-text = "Game Settings"
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.5
 
-[node name="Time Label" type="Label" parent="GridContainer"]
+[node name="Title Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Choose game time:"
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+theme_override_font_sizes/font_size = 180
+text = "Game Modifiers"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Time Options Button" type="OptionButton" parent="GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+columns = 5
 
-[node name="Ready Button" type="Button" parent="GridContainer"]
+[node name="Control5" type="Control" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 
-[node name="Back Button" type="Button" parent="GridContainer"]
+[node name="Time Label" type="Label" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Time:"
+label_settings = SubResource("LabelSettings_bxw4m")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Time Button" type="Button" parent="GridContainer"]
+[node name="Control" type="Control" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
 
-[node name="Player 1 Color Options Label" type="Label" parent="GridContainer"]
+[node name="Time Options Button" type="OptionButton" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 80
+alignment = 1
+
+[node name="Control6" type="Control" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Control8" type="Control" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Player 1 Color Options Label" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Player 1 Colors:"
+label_settings = SubResource("LabelSettings_r0ag6")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Player 2 Color Options Label" type="Label" parent="GridContainer"]
+[node name="Control2" type="Control" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
+
+[node name="Player 1 Colors Option Button" type="OptionButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 80
+alignment = 1
+
+[node name="Control9" type="Control" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Control10" type="Control" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Player 2 Color Options Label" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Player 2 Colors:"
+label_settings = SubResource("LabelSettings_pb1dw")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Player 1 Colors Option Button" type="OptionButton" parent="GridContainer"]
+[node name="Control3" type="Control" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.25
 
-[node name="Player 2 Colors Option Button" type="OptionButton" parent="GridContainer"]
+[node name="Player 2 Colors Option Button" type="OptionButton" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 80
+alignment = 1
+
+[node name="Control7" type="Control" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Control11" type="Control" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="Back Button" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 90
+text = "Back"
+
+[node name="Control4" type="Control" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Continue Button" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/font_size = 90
+text = "Continue"
+
+[node name="Control12" type="Control" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="CRT Fish Eye Lens" type="ColorRect" parent="."]
 visible = false

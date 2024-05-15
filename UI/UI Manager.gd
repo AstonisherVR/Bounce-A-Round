@@ -23,14 +23,17 @@ func _input(event: InputEvent) -> void:
 		get_tree().paused = Global.paused
 		pause_menu_background.play("Blur")
 
-func _on_resume_button_pressed():
+func _on_resume_button_pressed() -> void:
 	Global.resume()
 
-func _on_restart_button_pressed():
+func _on_restart_button_pressed() -> void:
 	Global.restart()
 
-func _on_settings_button_pressed():
+func _on_settings_button_pressed() -> void:
 	Global.show_settings()
 
-func _on_main_menu_button_pressed():
+func _on_main_menu_button_pressed() -> void:
 	Global.back_to_main_menu()
+
+func _on_close_button_pressed() -> void:
+	Global.hide_settings()

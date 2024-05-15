@@ -59,9 +59,12 @@ settings_menu = NodePath("SettingsMenu")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1935.0
-offset_bottom = 1092.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.054902, 0.00392157, 0.0823529, 1)
 
 [node name="Main Menu Options" type="VBoxContainer" parent="."]
@@ -74,9 +77,15 @@ grow_vertical = 2
 alignment = 1
 metadata/_edit_group_ = true
 
+[node name="Control2" type="Control" parent="Main Menu Options"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.5
+
 [node name="Game Title" type="Label" parent="Main Menu Options"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
 text = "Ballers"
 label_settings = SubResource("LabelSettings_wnxf0")
 horizontal_alignment = 1
@@ -84,9 +93,9 @@ vertical_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="Main Menu Options"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 5.0
 theme_override_constants/v_separation = 10
 columns = 3
 
@@ -153,6 +162,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Control" type="Control" parent="Main Menu Options"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.1
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
@@ -171,8 +185,10 @@ text = "version"
 label_settings = SubResource("LabelSettings_g2n8b")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("3_wgyqb")]
+visible = false
 
 [node name="CRT Fish Eye Lens" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_5l074")
 layout_mode = 2
 offset_left = -3.0
@@ -187,3 +203,6 @@ color = Color(1, 1, 1, 0)
 [connection signal="pressed" from="Main Menu Options/GridContainer/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Main Menu Options/GridContainer/Settings Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Main Menu Options/GridContainer/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="SettingsMenu/Panel/BackgroundPanel/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+
+[editable path="SettingsMenu"]

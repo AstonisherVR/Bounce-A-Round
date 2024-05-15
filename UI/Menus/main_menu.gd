@@ -5,7 +5,7 @@ class_name MainMenu extends Control
 @export var version_num_label: Label
 @export var settings_menu: CanvasLayer
 
-const version_num: String = "0.2"
+const version_num: String = "0.3"
 
 func _ready() -> void:
 	settings_menu.hide()
@@ -24,3 +24,5 @@ func _on_settings_menu_closed_settings() -> void:
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
+func _on_close_button_pressed() -> void:
+	settings_menu.hide()
