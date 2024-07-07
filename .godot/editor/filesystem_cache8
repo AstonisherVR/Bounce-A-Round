@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715786019
+::res://::1719344219
 bounds_left.gd::GDScript::-1::1714397782::0::1::::<>Area2D<>::
 bounds_left.tscn::PackedScene::8344894735083380823::1714399129::0::1::::<><>::res://bounds_left.gd<>uid://brb0gacnyvbfa::::res://glowing_void.tscn<>uid://vtd1mpoceklc::::res://SFX/Score.wav
 bounds_right.gd::GDScript::-1::1714399384::0::1::::<>Area2D<>::
 bounds_right.tscn::PackedScene::4868535181555491097::1714399384::0::1::::<><>::res://bounds_right.gd<>uid://brb0gacnyvbfa::::res://glowing_void.tscn<>uid://vtd1mpoceklc::::res://SFX/Score.wav
-export_presets.cfg::TextFile::-1::1714946483::0::1::::<><>::
-glowing_void.tscn::PackedScene::3583224046589470454::1715773561::0::1::::<><>::uid://c0r8854baeq65::::res://Sprites/Glowing Wall.png
+export_presets.cfg::TextFile::-1::1719344105::0::1::::<><>::
+glowing_void.tscn::PackedScene::3583224046589470454::1719343684::0::1::::<><>::uid://c0r8854baeq65::::res://Sprites/Glowing Wall.png
 ::res://addons/::1714947493
 ::res://addons/godot-git-plugin/::1714947493
 git_plugin.gdextension::GDExtension::-1::1714947493::0::1::::<><>::
@@ -13,36 +13,36 @@ plugin.cfg::TextFile::-1::1714947493::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1714947493::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1714947493
 ::res://addons/godot-git-plugin/macos/::1714947493
-::res://addons/godot-git-plugin/win64/::1715786013
-::res://Autoloads/::1715704125
-Global.gd::GDScript::-1::1715704125::0::1::::<>Node<>::
+::res://addons/godot-git-plugin/win64/::1719344216
+::res://Autoloads/::1715789038
+Global.gd::GDScript::-1::1715789038::0::1::::<>Node<>::
 SceneManager.gd::GDScript::-1::1714385155::0::1::::<>RefCounted<>::
-::res://Ball/::1715773561
-ball.gd::GDScript::-1::1715769971::0::1::::<>CharacterBody2D<>::
+::res://Ball/::1719343684
+ball.gd::GDScript::-1::1719343452::0::1::::<>CharacterBody2D<>::
 ball.tscn::PackedScene::4017359411779213298::1714396817::0::1::::<><>::res://Ball/ball.gd<>uid://b8fyjl8dordd3::::res://SFX/Ball bounce.wav<>uid://duypn7db61v6v::::res://Sprites/Ball.png<>uid://dg6k76bkl60i1::::res://Ball/sparkles.tscn
 bounce_particles_ball.gd::GDScript::-1::1712922304::0::1::::<>GPUParticles2D<>::
 bounce_particles_ball.tscn::PackedScene::7501876839653744736::1714062018::0::1::::<><>::uid://2h18haoq8f6s::::res://Sprites/Line Particle.png<>uid://duypn7db61v6v::::res://Sprites/Ball.png<>res://Ball/bounce_particles_ball.gd
 new_ball.gd::GDScript::-1::1714396770::0::1::::<>CharacterBody2D<>::
-new_ball.tscn::PackedScene::8522861141963749581::1715773561::0::1::::<><>::res://Ball/new_ball.gd<>uid://b8fyjl8dordd3::::res://SFX/Ball bounce.wav<>uid://duypn7db61v6v::::res://Sprites/Ball.png<>uid://dg6k76bkl60i1::::res://Ball/sparkles.tscn
+new_ball.tscn::PackedScene::8522861141963749581::1719343684::0::1::::<><>::res://Ball/new_ball.gd<>uid://b8fyjl8dordd3::::res://SFX/Ball bounce.wav<>uid://duypn7db61v6v::::res://Sprites/Ball.png<>uid://dg6k76bkl60i1::::res://Ball/sparkles.tscn
 sparkles.tscn::PackedScene::7645056768854932278::1713624320::0::1::::<><>::uid://bu1qdry8vm3rh::::res://Sprites/Godot-particle-and-vfx-textures-main/textures/64/alpha/spotlight_8.png<>uid://cv1y5swljo0ut::::res://Sprites/Godot-particle-and-vfx-textures-main/textures/64/effect_3.png<>uid://cp7s2ifcw3v0q::::res://Sprites/Godot-particle-and-vfx-textures-main/textures/64/alpha/spotlight_1.png
-::res://Main Game/::1715773642
-game.gd::GDScript::-1::1715353319::0::1::::<>Node2D<>::
-game.tscn::PackedScene::8163809223640213984::1715773561::0::1::::<><>::res://Main Game/game.gd<>uid://bxibk75h3g5x3::::res://Ball/ball.tscn<>uid://bsiemt4atgc2s::::res://Walls/wall_down.tscn<>uid://cpcwgrcxxsrvv::::res://Walls/wall_up.tscn<>res://Main Game/game_color_rect.gdshader<>uid://dq5lgx3emoax0::::res://bounds_left.tscn<>uid://cbmmce8uawk1n::::res://bounds_right.tscn<>uid://cq83tyx3fi3gd::::res://Players/player_1.tscn<>uid://b43rkdvatrfty::::res://Players/player_2.tscn<>uid://diik11teyvc8b::::res://Sprites/Background.png<>uid://lifj1p1t035t::::res://UI/countdown_timer.tscn<>res://Main Game/game_camera.gd<>uid://bwk4b1tk1bgle::::res://UI/score.tscn<>res://UI/UI Manager.gd<>uid://dua4icc2b3ldh::::res://UI/Menus/pause_menu.tscn<>uid://ds3g65fim75uk::::res://UI/Menus/settings_menu.tscn
+::res://Main Game/::1719344177
+game.gd::GDScript::-1::1719343499::0::1::::<>Node2D<>::
+game.tscn::PackedScene::8163809223640213984::1719343683::0::1::::<><>::res://Main Game/game.gd<>uid://bxibk75h3g5x3::::res://Ball/ball.tscn<>uid://bsiemt4atgc2s::::res://Walls/wall_down.tscn<>uid://cpcwgrcxxsrvv::::res://Walls/wall_up.tscn<>res://Main Game/game_color_rect.gdshader<>uid://dq5lgx3emoax0::::res://bounds_left.tscn<>uid://cbmmce8uawk1n::::res://bounds_right.tscn<>uid://cq83tyx3fi3gd::::res://Players/player_1.tscn<>uid://b43rkdvatrfty::::res://Players/player_2.tscn<>uid://diik11teyvc8b::::res://Sprites/Background.png<>uid://lifj1p1t035t::::res://UI/countdown_timer.tscn<>res://Main Game/game_camera.gd<>uid://bwk4b1tk1bgle::::res://UI/score.tscn<>res://UI/UI Manager.gd<>uid://dua4icc2b3ldh::::res://UI/Menus/pause_menu.tscn<>uid://ds3g65fim75uk::::res://UI/Menus/settings_menu.tscn
 game_camera.gd::GDScript::-1::1712929700::0::1::::<>Camera2D<>::
-game_color_rect.gdshader::Shader::-1::1715773642::0::1::::<><>::
+game_color_rect.gdshader::Shader::-1::1719344177::0::1::::<><>::
 ::res://Other/::1715354420
 ::res://Players/::1714291014
 player_1.gd::GDScript::-1::1714147513::0::1::::<>CharacterBody2D<>::
 player_1.tscn::PackedScene::5965722634730472463::1714291014::0::1::::<><>::res://Players/player_1.gd<>uid://cwwouooshgk2m::::res://Sprites/Human Player.png<>uid://c8ephqthyh65e::::res://SFX/Footstepwav.wav
 player_2.gd::GDScript::-1::1714147491::0::1::::<>CharacterBody2D<>::
 player_2.tscn::PackedScene::4480749963162800938::1714291014::0::1::::<><>::res://Players/player_2.gd<>uid://cwwouooshgk2m::::res://Sprites/Human Player.png<>uid://c8ephqthyh65e::::res://SFX/Footstepwav.wav
-::res://Portals/::1715773561
+::res://Portals/::1719343684
 portal_1.gd::GDScript::-1::1714396335::0::1::::<>Portal_Base<>::
-portal_1.tscn::PackedScene::5195826009237818908::1715773561::0::1::::<><>::uid://b2pnxwpxs63y7::::res://Portals/portal_base.tscn<>res://Portals/portal_1.gd
+portal_1.tscn::PackedScene::5195826009237818908::1719343684::0::1::::<><>::uid://b2pnxwpxs63y7::::res://Portals/portal_base.tscn<>res://Portals/portal_1.gd
 portal_2.gd::GDScript::-1::1714396282::0::1::::<>Portal_Base<>::
-portal_2.tscn::PackedScene::2085216934441633147::1715773561::0::1::::<><>::res://Portals/portal_2.gd<>uid://b2pnxwpxs63y7::::res://Portals/portal_base.tscn
+portal_2.tscn::PackedScene::2085216934441633147::1719343684::0::1::::<><>::res://Portals/portal_2.gd<>uid://b2pnxwpxs63y7::::res://Portals/portal_base.tscn
 portal_base.gd::GDScript::-1::1714396244::0::1::::Portal_Base<>Node2D<>::
-portal_base.tscn::PackedScene::4313316702152738552::1715773561::0::1::::<><>::res://Portals/portal_base.gd<>uid://7d3xas3xmdfi::::res://Sprites/Portal Part 1.png<>uid://bexk5sde3ahhc::::res://Sprites/Portal Part 2.png
+portal_base.tscn::PackedScene::4313316702152738552::1719343684::0::1::::<><>::res://Portals/portal_base.gd<>uid://7d3xas3xmdfi::::res://Sprites/Portal Part 1.png<>uid://bexk5sde3ahhc::::res://Sprites/Portal Part 2.png
 ::res://SFX/::1713557496
 Ball bounce.wav::AudioStreamWAV::4714448321381091862::1713557494::1713557496::1::::<><>::
 click.wav::AudioStreamWAV::2322640641716252116::1667010172::1713039490::1::::<><>::
@@ -217,24 +217,24 @@ random_selection.png::CompressedTexture2D::7874775134068416063::1606939783::1713
 Old Background.png::CompressedTexture2D::7337465728180408050::1712929472::1714387330::1::::<><>::
 Player Other.png::CompressedTexture2D::571181188998898594::1711568754::1714387330::1::::<><>::
 Player.png::CompressedTexture2D::7292247415346196399::1712603160::1714387330::1::::<><>::
-::res://UI/::1715773561
+::res://UI/::1719343684
 countdown_timer.gd::GDScript::-1::1714144560::0::1::::<>Control<>::
-countdown_timer.tscn::PackedScene::788913349146708215::1715773561::0::1::::<><>::res://UI/countdown_timer.gd
+countdown_timer.tscn::PackedScene::788913349146708215::1719343684::0::1::::<><>::res://UI/countdown_timer.gd
 default_bus_layout.tres::AudioBusLayout::3195979413863591186::1713888687::0::1::::<><>::
 PeaberryBase.ttf::FontFile::962934122674841434::1714133832::1714137832::1::::<><>::
-score.tscn::PackedScene::3952982995302076858::1715773561::0::1::::<><>::
-UI Manager.gd::GDScript::-1::1715704456::0::1::::<>CanvasLayer<>::
+score.tscn::PackedScene::3952982995302076858::1716395176::0::1::::<><>::
+UI Manager.gd::GDScript::-1::1715786851::0::1::::<>CanvasLayer<>::
 user_prefs.gd::GDScript::-1::1714406110::0::1::::UserPrefs<>Resource<>::
-::res://UI/Menus/::1715773642
-game_options_screen.gd::GDScript::-1::1713467805::0::1::::<>Control<>::
-game_options_screen.tscn::PackedScene::7692252013821357478::1715773561::0::1::::<><>::res://UI/Menus/game_options_screen.gd<>res://Main Game/game_color_rect.gdshader
-main_menu.gd::GDScript::-1::1715361910::0::1::::MainMenu<>Control<>::
-main_menu.tscn::PackedScene::8768918841112846665::1715773561::0::1::::<><>::res://UI/Menus/main_menu.gd<>res://Main Game/game_color_rect.gdshader<>uid://ds3g65fim75uk::::res://UI/Menus/settings_menu.tscn
+::res://UI/Menus/::1719344177
+game_options_screen.gd::GDScript::-1::1715786968::0::1::::<>Control<>::
+game_options_screen.tscn::PackedScene::7692252013821357478::1719343683::0::1::::<><>::res://UI/Menus/game_options_screen.gd<>res://Main Game/game_color_rect.gdshader
+main_menu.gd::GDScript::-1::1715787062::0::1::::MainMenu<>Control<>::
+main_menu.tscn::PackedScene::8768918841112846665::1719344177::0::1::::<><>::res://UI/Menus/main_menu.gd<>res://Main Game/game_color_rect.gdshader<>uid://ds3g65fim75uk::::res://UI/Menus/settings_menu.tscn
 pause_menu.gd::GDScript::-1::1715359714::0::1::::<>Control<>::
-pause_menu.gdshader::Shader::-1::1715773642::0::1::::<><>::
-pause_menu.tscn::PackedScene::8564814112346932713::1715773561::0::1::::<><>::
-settings_menu.gd::GDScript::-1::1715704296::0::1::::<>CanvasLayer<>::
-settings_menu.tscn::PackedScene::8480885059050549290::1715773561::0::1::::<><>::res://UI/Menus/settings_menu.gd
+pause_menu.gdshader::Shader::-1::1719344177::0::1::::<><>::
+pause_menu.tscn::PackedScene::8564814112346932713::1719343684::0::1::::<><>::
+settings_menu.gd::GDScript::-1::1715786911::0::1::::<>CanvasLayer<>::
+settings_menu.tscn::PackedScene::8480885059050549290::1719343684::0::1::::<><>::res://UI/Menus/settings_menu.gd
 ::res://Walls/::1714407171
 wall_down.gd::GDScript::-1::1714137676::0::1::::<>StaticBody2D<>::
 wall_down.tscn::PackedScene::3666600231476697040::1714290130::0::1::::<><>::uid://c6uv5me287frw::::res://Sprites/Wall.png<>res://Walls/wall_down.gd

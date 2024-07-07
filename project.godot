@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Ballers"
-run/main_scene="res://Main Game/game.tscn"
+config/name="Bounce A Round"
+run/main_scene="res://UI/Menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://Sprites/Balllers Icon V2.ico"
 config/windows_native_icon="res://Sprites/Balllers Icon V2.ico"
 
 [audio]

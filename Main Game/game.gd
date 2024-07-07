@@ -60,17 +60,17 @@ func _on_random_specials_timer_timeout():
 func aplly_gravity_to_ball(delta):
 	if not ball.is_on_floor():
 		ball.velocity.y += ball.gravity * delta
-#This one one spwans multiple balls
-func multiply_ball():
-	var new_ball = preload("res://Ball/new_ball.tscn").instantiate()
-	new_ball.position = Vector2(randf_range(-10,10), randf_range(-10,10))
-	add_child(new_ball)
+##This one one spwans multiple balls
+#func multiply_ball():
+	#var new_ball = preload("res://Ball/new_ball.tscn").instantiate()
+	#new_ball.position = Vector2(randf_range(-10,10), randf_range(-10,10))
+	#add_child(new_ball)
 
-func _on_ball_spawner_timer_timeout():
-	#print("Multiply timer HERE")
-	multiply_ball()
-	if multiply_ball_state == true:
-		ball_spawner_timer.start()
+#func _on_ball_spawner_timer_timeout():
+	##print("Multiply timer HERE")
+	#multiply_ball()
+	#if multiply_ball_state == true:
+		#ball_spawner_timer.start()
 
 #func make_portals():
 	#portal_1.randomize_pos()
