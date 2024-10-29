@@ -14,4 +14,3 @@ func _process(delta):
 func color_options():
 	if player_1_colors_option_dropdown_button.item_selected:
 		modulate = Color(1, 1, 5, 1)
-
