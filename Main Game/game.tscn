@@ -194,6 +194,7 @@ metadata/_edit_lock_ = true
 
 [node name="Random Specials Timer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 1.1
 
 [node name="Ball Spawner Timer" type="Timer" parent="."]
 process_callback = 0
@@ -213,6 +214,7 @@ settings_menu = NodePath("SettingsMenu")
 process_mode = 2
 
 [node name="SettingsMenu" parent="UI Manager" instance=ExtResource("16_2oj3s")]
+visible = false
 
 [connection signal="body_entered" from="Bounds Left" to="." method="_on_bounds_left_body_entered"]
 [connection signal="body_entered" from="Bounds Right" to="." method="_on_bounds_right_body_entered"]
