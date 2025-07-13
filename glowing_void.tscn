@@ -51,9 +51,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6vrc"]
 _data = {
-"Glowing": SubResource("Animation_cobi6"),
-"Idle": SubResource("Animation_gbw8e"),
-"RESET": SubResource("Animation_b3sot")
+&"Glowing": SubResource("Animation_cobi6"),
+&"Idle": SubResource("Animation_gbw8e"),
+&"RESET": SubResource("Animation_b3sot")
 }
 
 [node name="Glowing Void" type="Node2D"]
@@ -64,5 +64,5 @@ texture = ExtResource("1_f1ebt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_c6vrc")
+&"": SubResource("AnimationLibrary_c6vrc")
 }

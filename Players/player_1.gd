@@ -51,7 +51,7 @@ func movement(delta):
 	wall_checking()
 	#Rotational movement
 	if rotation_direction:
-		rotate(rotation_direction * rotation_speed) 
+		rotate(rotation_direction * rotation_speed)
 	#Player Movement
 	direction = player_input()
 	if direction == Vector2.ZERO:

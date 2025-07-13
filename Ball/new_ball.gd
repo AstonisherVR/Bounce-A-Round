@@ -80,7 +80,7 @@ func spawn_bounce_particles(pos: Vector2, angle: float) -> void:
 	instance.rotation = angle
 
 func special_ball_chance():
-	var random_special_new_ball_chance_number: int = randi_range(1, 20) 
+	var random_special_new_ball_chance_number: int = randi_range(1, 20)
 	if random_special_new_ball_chance_number > 18:
 		current_new_ball_idle_animation_number = 1
 		current_new_ball_bounce_animation_number = 1

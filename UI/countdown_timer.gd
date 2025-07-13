@@ -46,5 +46,5 @@ func _on_flash_text_timer_timeout():
 	countdown_timer_flash_number += 1
 	if countdown_timer_flash_number % 2 == 0:
 		countdown_timer_text.show()
-	else: 
+	else:
 		countdown_timer_text.hide()

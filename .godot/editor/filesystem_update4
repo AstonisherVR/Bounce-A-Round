@@ -1,5 +1,4 @@
 res://Main Game/game.tscn
-res://Ball/ball.gd
 res://Main Game/game_color_rect.gdshader
 res://UI/Menus/pause_menu.gdshader
 res://UI/Menus/game_options_screen.tscn

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dw6y2u4cbpt42"]
 
-[ext_resource type="Script" path="res://UI/Menus/main_menu.gd" id="1_b0004"]
-[ext_resource type="Shader" path="res://Main Game/game_color_rect.gdshader" id="2_tlm5h"]
+[ext_resource type="Script" uid="uid://ep8jkbhit5ii" path="res://UI/Menus/main_menu.gd" id="1_b0004"]
+[ext_resource type="Shader" uid="uid://det3q71q1pv7s" path="res://Main Game/game_color_rect.gdshader" id="2_tlm5h"]
 [ext_resource type="PackedScene" uid="uid://ds3g65fim75uk" path="res://UI/Menus/settings_menu.tscn" id="3_wgyqb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wnxf0"]

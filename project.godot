@@ -12,8 +12,8 @@ config_version=5
 
 config/name="Bounce A Round"
 run/main_scene="res://UI/Menus/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Sprites/Balllers Icon V2.ico"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://Sprites/Human Player.png"
 config/windows_native_icon="res://Sprites/Balllers Icon V2.ico"
 
 [audio]

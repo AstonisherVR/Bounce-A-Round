@@ -18,12 +18,13 @@ func _ready():
 	random_specials_timer.start()
 	animated_game_background.play("Default Background")
 	Global.camera = game_camera
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	game_time_over()
 	if aplly_gravity_to_ball_state == true:
 		aplly_gravity_to_ball(delta)
+
 		#TODO show Popup
 
 func game_time_over():

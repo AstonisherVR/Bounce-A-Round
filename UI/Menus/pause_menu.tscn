@@ -64,8 +64,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p0eww"]
 _data = {
-"Blur": SubResource("Animation_s1582"),
-"RESET": SubResource("Animation_1x5vv")
+&"Blur": SubResource("Animation_s1582"),
+&"RESET": SubResource("Animation_1x5vv")
 }
 
 [node name="Pause Menu" type="Control"]
@@ -129,5 +129,5 @@ text = "Main Menu
 
 [node name="BackgroundAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_p0eww")
+&"": SubResource("AnimationLibrary_p0eww")
 }

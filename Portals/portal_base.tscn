@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2pnxwpxs63y7"]
 
-[ext_resource type="Script" path="res://Portals/portal_base.gd" id="1_gjyg3"]
+[ext_resource type="Script" uid="uid://jumkfis7kbu" path="res://Portals/portal_base.gd" id="1_gjyg3"]
 [ext_resource type="Texture2D" uid="uid://7d3xas3xmdfi" path="res://Sprites/Portal Part 1.png" id="1_p6hrs"]
 [ext_resource type="Texture2D" uid="uid://bexk5sde3ahhc" path="res://Sprites/Portal Part 2.png" id="2_p46ri"]
 
@@ -334,9 +334,9 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fyalt"]
 _data = {
-"Idle": SubResource("Animation_1ol0i"),
-"Opening & Closing": SubResource("Animation_1xown"),
-"RESET": SubResource("Animation_dvwwf")
+&"Idle": SubResource("Animation_1ol0i"),
+&"Opening & Closing": SubResource("Animation_1xown"),
+&"RESET": SubResource("Animation_dvwwf")
 }
 
 [node name="Portal Base" type="Node2D" groups=["Portals"]]
@@ -360,5 +360,5 @@ shape = SubResource("CapsuleShape2D_mep67")
 
 [node name="PortalAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_fyalt")
+&"": SubResource("AnimationLibrary_fyalt")
 }

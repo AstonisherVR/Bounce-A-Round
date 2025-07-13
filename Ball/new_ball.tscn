@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://dtosjpe0sqnn6"]
 
-[ext_resource type="Script" path="res://Ball/new_ball.gd" id="1_rnwm7"]
+[ext_resource type="Script" uid="uid://camuw45v5e51h" path="res://Ball/new_ball.gd" id="1_rnwm7"]
 [ext_resource type="AudioStream" uid="uid://b8fyjl8dordd3" path="res://SFX/Ball bounce.wav" id="2_2vkeu"]
 [ext_resource type="Texture2D" uid="uid://duypn7db61v6v" path="res://Sprites/Ball.png" id="3_0wjap"]
 [ext_resource type="PackedScene" uid="uid://dg6k76bkl60i1" path="res://Ball/sparkles.tscn" id="4_7ho7f"]
@@ -459,11 +459,11 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ts144"]
 _data = {
-"Bounce": SubResource("Animation_jeo88"),
-"Glowing Bounce": SubResource("Animation_2um8w"),
-"Glowing Idle": SubResource("Animation_7i3vn"),
-"Idle": SubResource("Animation_ykjmc"),
-"RESET": SubResource("Animation_pjiam")
+&"Bounce": SubResource("Animation_jeo88"),
+&"Glowing Bounce": SubResource("Animation_2um8w"),
+&"Glowing Idle": SubResource("Animation_7i3vn"),
+&"Idle": SubResource("Animation_ykjmc"),
+&"RESET": SubResource("Animation_pjiam")
 }
 
 [node name="New Ball" type="CharacterBody2D" node_paths=PackedStringArray("animation_player", "sparkles", "ball_bounce_sfx", "ball_sprites") groups=["New Ball"]]
@@ -500,7 +500,7 @@ scale = Vector2(0.75, 0.75)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ts144")
+&"": SubResource("AnimationLibrary_ts144")
 }
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
